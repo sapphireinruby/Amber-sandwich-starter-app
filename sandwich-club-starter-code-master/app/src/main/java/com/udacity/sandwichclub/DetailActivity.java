@@ -21,8 +21,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        ImageView ingredientsIv = findViewById(R.id.image_iv);
-
         Intent intent = getIntent();
         if (intent == null) {
             closeOnError();
@@ -35,7 +33,7 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
-        String[] sandwiches = getResources().getStringArray(R.array.sandwich_details);
+        String[] sandwiches = getResources().getStringArray(R.array.sandwich_details); //from strings.xml
         String json = sandwiches[position];
         Sandwich sandwich = JsonUtils.parseSandwichJson(json);
         if (sandwich == null) {
@@ -44,10 +42,15 @@ public class DetailActivity extends AppCompatActivity {
             return;
         }
 
+        ImageView sandwichesIv = findViewById(R.id.image_iv);
+
         populateUI(sandwich);
+
         Picasso.with(this)
-                .load(sandwich.getImage())
-                .into(ingredientsIv);
+                .load(sandwich.getImage()) // load(URL)
+                .placeholder(R.drawable.souv)
+                .into(sandwichesIv);
+        // placeholder() to display a placeholder until the image is loaded and processed.
 
         setTitle(sandwich.getMainName());
     }
@@ -58,9 +61,10 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void populateUI(Sandwich sandwich) {
+
         TextView aka = findViewById(R.id.also_known_tv);
         for(int i = 0; i < sandwich.getAlsoKnownAs().size(); i++) {
-            aka.append(sandwich.getAlsoKnownAs().get(i) + "\n");
+            aka.append(sandwich.getAlsoKnownAs().get(i) + " ");
         }
 
         TextView PlaceOfOrigin = findViewById(R.id.origin_tv);
@@ -71,7 +75,7 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView Ingredients = findViewById(R.id.ingredients_tv);
         for (int i = 0; i < sandwich.getIngredients().size(); i++) {
-            Ingredients.append(sandwich.getIngredients().get(i) + "\n");
+            Ingredients.append(sandwich.getIngredients().get(i) + " ");
 
         }
 
