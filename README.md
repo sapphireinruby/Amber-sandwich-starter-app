@@ -15,3 +15,5 @@ produces a Sandwich Object that can be used to populate the UI with design.
 - JSON parsing to a model object
 - Design activity layout
 - Populate all fields in the layout accordingly
+
+ <img src="https://github.com/sapphireinruby/Amber-sandwich-starter-app/blob/master/image%20file/GrowwithGoogle%20with%20name.png?raw=true" width="150"> <img src="https://github.com/sapphireinruby/Amber-sandwich-starter-app/blob/master/image%20file/screen-1.png?raw=true" width="179"> <img src="https://github.com/sapphireinruby/Amber-sandwich-starter-app/blob/master/image%20file/screen-2.png?raw=true" width="179">
