@@ -1,18 +1,17 @@
-# Sandwich Club Project Starter Code
+# Sandwich Club Project Starter
 
 ## Project Overview
-Complete the **Sandwich Club** app to
-show the details of each sandwich once it is selected.
+A simple **Sandwich Club** app to
+show the details of each sandwich is selected from the menu.
 
-Building a layout and populating its fields from data received as JSON
-is a common task for Android Developers. Although JSON parsing is usually
-done using libraries, writing the JSON parsing for this project will
-help to better understand how it is processed.
+Built a layout and populating the fields from data received as JSON. 
+Writed the JSON parsing to understand how it is processed with out using librarues.
 
-- Practice JSON parsing to a model object
-- Design an activity layout
+Design the layout for the detail activity for 
+different elements display in a sensible way. 
+Implement the JSON parsing in JsonUtils to
+produces a Sandwich Object that can be used to populate the UI with design.
+
+- JSON parsing to a model object
+- Design activity layout
 - Populate all fields in the layout accordingly
-
-Design the layout for the detail activity so the different elements
-display in a sensible way. Implement the JSON parsing in JsonUtils so it
-produces a Sandwich Object that can be used to populate the UI that you designed.
